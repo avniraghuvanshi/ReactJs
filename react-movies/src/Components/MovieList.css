@@ -1,0 +1,22 @@
+.row-container{
+    width:100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.scroll{
+    width: max-content;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.poster-container{
+    height: 300px;
+    width: 190px;
+}
+.poster-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
