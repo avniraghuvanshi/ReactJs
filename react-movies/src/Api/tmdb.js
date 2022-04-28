@@ -6,5 +6,7 @@ console.log(api_key);
 export default axios.create({
     params:{
         api_key: api_key,
+        adult: false,
+        include_adult: false
     } 
 });

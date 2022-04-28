@@ -8,8 +8,8 @@ const MovieList = ({title , url}) =>{
     const movies = useTmdb(url);
     const renderedMovie = movies.map(movie =>{
         return(
-            <NavLink to={`details`} className="poster-container">
-                <img src={`${img_base_url}${movie.poster_path}`}></img>
+            <NavLink to={`details/${movie.id}`} className="poster-container" id={movie.id}>
+                <img src={`${img_base_url}${movie?.poster_path}`}></img>
             </NavLink>
         );
     });
