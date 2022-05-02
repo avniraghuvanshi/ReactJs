@@ -1,0 +1,34 @@
+.details{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.details-backdrop{
+    width: 100%;
+    height: 50vh;
+    border: 1px solid #fff;
+}
+.details-backdrop img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.details-content{
+    width: 100%;
+    position: absolute;
+    top: 35vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.details-content img{
+    width: 220px;
+    height: 300px;
+}
+.dc-upper{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
