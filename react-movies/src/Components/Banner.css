@@ -1,10 +1,39 @@
 .banner-container{
     width: 100%;
     height: 77vh;
-    border: 1px solid #fff;
+    position: relative;
+}
+.banner-container::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top right , #050505 ,#050505ea ,#050505dc, transparent , transparent, transparent);
 }
 .banner-container img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+.banner-content{
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: #fff;
+}
+.banner-content h1{
+    font-size: 5.5rem;
+}
+.banner-content p>span{
+    font-size: 1.5rem;
+    margin-right: .5rem;
+    color: #f5cb5c;
+}
+.banner-content p{
+    margin: .3rem 0 1.4rem 0;
 }

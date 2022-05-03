@@ -13,7 +13,7 @@ const Navbar = () =>{
         <div className="navbar">
             <NavLink to={''} className="nav-logo">FlixBox</NavLink>
             <form onSubmit={searchForMovie}>
-                <input type="text" onChange={e=>{setQuery(e.target.value)}} value={query} name="search" placeholder="Search..."></input>
+                <input type="text" onChange={e=>{setQuery(e.target.value)}} value={query} id="search" placeholder="Search..."></input>
             </form>
         </div>
     );

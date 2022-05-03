@@ -10,11 +10,11 @@ const Search = () =>{
     const searchResult = useTmdb(`https://api.themoviedb.org/3/search/movie?query=${state}`);
     const filteredResult = searchResult.filter(result => result?.backdrop_path!==null).map(movie=>{
         return(
-            <NavLink to={`/details/${movie.id}`} className="sl-card" key={movie.id}>
-                <img src={`${img_base_url}${movie.poster_path}`} alt={movie.id}></img>
+            <NavLink to={`/details/${movie?.id}`} className="sl-card" key={movie?.id}>
+                <img src={`${img_base_url}${movie?.poster_path}`} alt={movie?.id}></img>
                 <div className="card-content">
-                    <h1>{movie.title}</h1>
-                    <p>{movie.overview}</p>
+                    <h1>{movie?.title}</h1>
+                    <p><span className="material-symbols-outlined">star</span>{movie?.vote_average}</p>
                 </div>
             </NavLink>
         );
@@ -22,7 +22,7 @@ const Search = () =>{
     
     return(
         <section className="search">
-            <h2 id="query">Results for {`${state}`}</h2>
+            <h2 id="query">Results for '{state}'...</h2>
             <div className="sl-card-container">
                 {filteredResult}
             </div>

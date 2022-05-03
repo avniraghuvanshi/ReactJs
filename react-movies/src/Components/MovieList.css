@@ -1,21 +1,48 @@
 .row-container{
     width:100%;
+    margin: 1.5rem 0 2.5rem 0;
+}
+.row-container h1{
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+.scroll-container{
+    width: inherit;
     overflow-y: hidden;
     overflow-x: scroll;
+}
+.scroll-container::-webkit-scrollbar{
+    height: .7rem;
+    background: #000000dc;
+    border-radius: 2rem;
+}
+.scroll-container::-webkit-scrollbar-thumb{
+    background: #242423;
+    border-radius: 2rem;
+}
+.scroll-container::-webkit-scrollbar-thumb:hover{
+    background: #333533;
 }
 .scroll{
     width: max-content;
     display: flex;
-    gap: 10px;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 .poster-container{
-    height: 300px;
-    width: 190px;
+    height: 27rem;
+    width: 19rem;
+    transition: all .3s;
 }
 .poster-container img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+.poster-container:hover{
+    transform: scale(1.09);
+    transition: all .3s;
 }

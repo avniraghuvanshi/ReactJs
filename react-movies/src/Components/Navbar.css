@@ -1,7 +1,27 @@
 .navbar{
     height: 3rem;
     width: 100%;
+    margin-bottom: .8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #050505;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 .2rem .9rem #000000;
+    z-index: 10;
+    position: fixed;
+}
+.nav-logo{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.4rem;
+    color: #f5cb5c;
+}
+.navbar input{
+    height: 3rem;
+    width: 27rem;
+    padding: .6rem;
+    font-size: 1.3rem;
+    background: #333533;
+    border: none;
+    color: #fff;
 }

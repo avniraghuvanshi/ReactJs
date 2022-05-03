@@ -17,21 +17,36 @@ const Details = () =>{
         }
         selectedMovie();
     },[detailsUrl]);
+    let revenue = details?.revenue ? details?.revenue.toLocaleString() : '';
+    let reviews = details?.vote_count ? details?.vote_count.toLocaleString() : '';
 
     return(
         <section className="details">
             <div className="details-backdrop">
-                <img src={`${img_base_url}${details?.backdrop_path}`}></img>
+                <img alt={details?.id} src={`${img_base_url}${details?.backdrop_path}`}></img>
             </div>
             <div className="details-content">
                 <div className="dc-upper">
-                    <img src={`${img_base_url}${details.poster_path}`}></img>
+                    <img alt={details?.id} src={`${img_base_url}${details?.poster_path}`}></img>
                     <div id="d-title">
-                        <h1>{details.title}</h1>
-                        <span>{details.vote_average}</span>
+                        <h1>{details?.title}</h1>
+                        <p><span className="material-symbols-outlined">star</span>{details?.vote_average}</p>
+                        {details?.genres ? <ul>
+                            {details?.genres.map(genre=>{
+                                return <li key={genre?.name}>{genre?.name}</li>
+                            })}
+                        </ul> : <span>-</span>}
                     </div>
                 </div>
-                <p id="overview">{details.overview}</p>
+                <section id="overview">
+                    <p>{details?.overview}</p>
+                    <div className="extra-info">
+                        <p><span className="material-symbols-outlined">paid</span>{revenue===""||revenue===null ? '-' : revenue }</p>
+                        <p><span className="material-symbols-outlined">reviews</span>{reviews===""||reviews===null ? '-' : reviews} User Reviews</p>
+                        <p><span className="material-symbols-outlined">calendar_month</span>{details?.release_date}</p>
+                        <p id="status">{details?.status}</p>
+                    </div>
+                </section>
             </div>
         </section>
     );

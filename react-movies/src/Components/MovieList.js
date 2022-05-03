@@ -16,7 +16,7 @@ const MovieList = ({title , url}) =>{
     return(
         <div className="row-container">
             <h1>{title}</h1>
-            <div className="scroll">{renderedMovie}</div>
+            <div className="scroll-container"><div className="scroll">{renderedMovie}</div></div>
         </div>
     );
 }

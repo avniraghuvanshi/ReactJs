@@ -13,6 +13,11 @@ const Banner = ({url}) =>{
     return(
         <div className="banner-container">
             <img src={`${img_base_url}${bannerMovie?.backdrop_path}`}></img>
+            <div className="banner-content">
+                <h1>{bannerMovie?.title}</h1>
+                <p><span className="material-symbols-outlined">star</span>{bannerMovie?.vote_average}</p>
+                <p>{bannerMovie?.overview}</p>
+            </div>
         </div>
     );
 }
