@@ -55,3 +55,16 @@
     color: #f5cb5c;
     margin-right: .5rem;
 }
+@media screen and (max-width: 550px){
+    .sl-card{
+        width: 35rem;
+    }
+    .sl-card img{
+        width: 11rem;
+        height: 18rem;
+    }
+    .card-content h1{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}

@@ -71,12 +71,12 @@ const Details = () =>{
                 <section id="cast">
                     <h1>Cast</h1>
                     <div className="cast-container">
-                            {castToRender.map(cast=>{
+                            {castToRender.filter(result => result?.profile_path!==null).map(cast=>{
                               return(
                                   <div key={cast.order} className="cast-info">
-                                      <img id='cast-profile' src={`${img_base_url}${cast.profile_path}`}></img>
-                                      <p id="name">{cast.name}</p>
-                                      <p id="character">{cast.character}</p>
+                                      <img alt={cast?.name} id='cast-profile' src={`${img_base_url}${cast?.profile_path}`}></img>
+                                      <p id="name">{cast?.name}</p>
+                                      <p id="character">{cast?.character}</p>
                                   </div>
                               );  
                             })}
