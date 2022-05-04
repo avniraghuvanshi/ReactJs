@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 import Search from './Components/Search';
 import Details from './Components/Details';
+import Error from './Components/Error';
 
 const App = () =>{
   return(
@@ -13,6 +14,7 @@ const App = () =>{
           <Route path='/' element={<Home />} />
           <Route path='search' element={<Search />} />
           <Route path='details/:movieId' element={<Details />} />
+          <Route path='*' element={<Error />} />
         </Routes>
     </div>
   );

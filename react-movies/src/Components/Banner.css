@@ -36,4 +36,33 @@
 }
 .banner-content p{
     margin: .3rem 0 1.4rem 0;
+    
+}
+
+@media screen and (max-width: 901px){
+    .banner-container{
+        height: 50vh;
+    }
+}
+@media screen and (max-width: 701px){
+    .banner-container{
+        height: 40vh;
+    }
+    .banner-content h1{
+        font-size: 3.6rem;
+    }
+    .banner-content{
+        width: 75%;
+        font-size: 1.4rem;
+    }
+    .banner-content p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+@media screen and (max-width: 500px){
+    #banner-overview{
+        display: none;
+    }
 }

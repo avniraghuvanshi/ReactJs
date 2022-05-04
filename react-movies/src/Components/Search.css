@@ -8,29 +8,34 @@
     letter-spacing: .1rem;
 }
 #query{
-    align-self: flex-start;
     font-weight: 300;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 .sl-card-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 2rem;
+    border-top: .1rem solid #333533;
 }
 .sl-card{
     width: 55rem;
     display: flex;
     align-items: center;
     gap: 2rem;
-    background: #161616;
+    background: #161616b2;
     color: #fff;
     padding: 2rem;
-    
+    box-shadow: .4rem .4rem 2rem #000000;
 } 
+.sl-card:hover{
+    background: #161616;
+}
 .sl-card img{
     width: 17rem;
     height: 24rem;
+    box-shadow: .2rem .2rem 2rem #000000;
 }
 .card-content{
     display: flex;

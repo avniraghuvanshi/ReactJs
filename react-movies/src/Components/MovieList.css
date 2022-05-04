@@ -46,3 +46,14 @@
     transform: scale(1.09);
     transition: all .3s;
 }
+@media screen and (max-width: 701px){
+    .poster-container{
+        height: 23rem;
+        width: 15rem;
+    }
+    .row-container h1{
+        color: #fff;
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+}

@@ -16,7 +16,7 @@ const Banner = ({url}) =>{
             <div className="banner-content">
                 <h1>{bannerMovie?.title}</h1>
                 <p><span className="material-symbols-outlined">star</span>{bannerMovie?.vote_average}</p>
-                <p>{bannerMovie?.overview}</p>
+                <p id="banner-overview">{bannerMovie?.overview}</p>
             </div>
         </div>
     );

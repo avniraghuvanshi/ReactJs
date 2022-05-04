@@ -1,0 +1,19 @@
+.error{
+    padding-top: 5rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    letter-spacing: .2rem;
+}
+.error h1:first-child{
+    font-size: 8rem;
+    color: #f5cb5c;
+}
+.error h1:last-child{
+    font-size: 4rem;
+    color: #fff;
+}

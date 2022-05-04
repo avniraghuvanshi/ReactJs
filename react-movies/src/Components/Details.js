@@ -1,5 +1,5 @@
-import React,{useState , useEffect} from "react";
-import { useParams } from "react-router-dom";
+import React,{useState ,useRef, useEffect} from "react";
+import { useParams , useNavigate } from "react-router-dom";
 import tmdb from "../Api/tmdb";
 import "./Details.css";
 
@@ -7,8 +7,12 @@ const img_base_url = 'https://image.tmdb.org/t/p/original';
 
 const Details = () =>{
     const {movieId} = useParams()
+    const navigate = useNavigate();
     const detailsUrl = `https://api.themoviedb.org/3/movie/${movieId}`;
+    const castUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits`;
     const [details , setDetails] = useState('');
+    const [cast , setCast] = useState('');
+
     useEffect(()=>{
         const selectedMovie = async () =>{
             const res = await tmdb.get(detailsUrl);
@@ -17,6 +21,23 @@ const Details = () =>{
         }
         selectedMovie();
     },[detailsUrl]);
+
+    useEffect(()=>{
+        const getcast = async () =>{
+            const res = await tmdb.get(castUrl);
+            setCast(res.data);
+            return res;
+        }
+        getcast();
+    },[castUrl]);
+
+    let castToRender = [];
+    if(cast){
+        for(let i=0;i<10;i++){
+            castToRender.push(cast.cast[i]);
+        }
+    }
+
     let revenue = details?.revenue ? details?.revenue.toLocaleString() : '';
     let reviews = details?.vote_count ? details?.vote_count.toLocaleString() : '';
 
@@ -45,6 +66,20 @@ const Details = () =>{
                         <p><span className="material-symbols-outlined">reviews</span>{reviews===""||reviews===null ? '-' : reviews} User Reviews</p>
                         <p><span className="material-symbols-outlined">calendar_month</span>{details?.release_date}</p>
                         <p id="status">{details?.status}</p>
+                    </div>
+                </section>
+                <section id="cast">
+                    <h1>Cast</h1>
+                    <div className="cast-container">
+                            {castToRender.map(cast=>{
+                              return(
+                                  <div key={cast.order} className="cast-info">
+                                      <img id='cast-profile' src={`${img_base_url}${cast.profile_path}`}></img>
+                                      <p id="name">{cast.name}</p>
+                                      <p id="character">{cast.character}</p>
+                                  </div>
+                              );  
+                            })}
                     </div>
                 </section>
             </div>

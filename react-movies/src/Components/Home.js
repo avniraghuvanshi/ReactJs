@@ -1,11 +1,12 @@
 import React from "react";
 import Banner from "./Banner";
 import MovieList from "./MovieList";
+import './Home.css';
 const base_url = 'https://api.themoviedb.org/3';
 
 const Home = () =>{
     return(
-        <div style={{padding:"0 3rem"}}>
+        <div className="home">
             <Banner url={`${base_url}/movie/now_playing`} />
             <MovieList title="Top Rated" url={`${base_url}/movie/top_rated?language=en-US`}/>
             <MovieList title="Popular" url={`${base_url}/movie/popular`}/>
