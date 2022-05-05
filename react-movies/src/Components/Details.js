@@ -73,7 +73,7 @@ const Details = () =>{
                     <div className="cast-container">
                             {castToRender.filter(result => result?.profile_path!==null).map(cast=>{
                               return(
-                                  <div key={cast.order} className="cast-info">
+                                  <div key={cast?.cast_id} className="cast-info">
                                       <img alt={cast?.name} id='cast-profile' src={`${img_base_url}${cast?.profile_path}`}></img>
                                       <p id="name">{cast?.name}</p>
                                       <p id="character">{cast?.character}</p>

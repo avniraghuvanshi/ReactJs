@@ -55,14 +55,21 @@
         width: 75%;
         font-size: 1.4rem;
     }
-    .banner-content p{
+    #banner-overview{
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical; 
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
     }
 }
 @media screen and (max-width: 500px){
-    #banner-overview{
-        display: none;
+    .banner-container{
+        height: 30vh;
+    }
+    .banner-content{
+        width: 60%;
+    }
+    .banner-content h1{
+        font-size: 3.2rem;
     }
 }
