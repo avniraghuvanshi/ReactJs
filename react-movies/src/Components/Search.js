@@ -14,7 +14,7 @@ const Search = () =>{
     const filteredResult = searchResult.filter(result => result?.backdrop_path!==null).map(movie=>{
         return(
             <NavLink to={`/details/${movie?.id}`} className="sl-card" key={movie?.id}>
-                <img src={`${img_base_url}${movie?.poster_path}`} alt={movie?.id}></img>
+                <img src={movie?.poster_path ? `${img_base_url}${movie?.poster_path}` : ''} alt={movie?.id}></img>
                 <div className="card-content">
                     <h1>{movie?.title}</h1>
                     <p><span className="material-symbols-outlined">star</span>{movie?.vote_average}</p>

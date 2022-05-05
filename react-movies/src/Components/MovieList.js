@@ -9,7 +9,7 @@ const MovieList = ({title , url}) =>{
     const renderedMovie = movies.filter(result => result?.poster_path!==null).map(movie =>{
         return(
             <NavLink to={`details/${movie.id}`} key={movie.id} className="poster-container" id={movie.id}>
-                <img alt={movie?.title} src={`${img_base_url}${movie?.poster_path}`}></img>
+                <img alt={movie?.title} src={movie?.poster_path ? `${img_base_url}${movie?.poster_path}` : ''}></img>
             </NavLink>
         );
     });

@@ -44,11 +44,11 @@ const Details = () =>{
     return(
         <section className="details">
             <div className="details-backdrop">
-                <img alt={details?.id} src={`${img_base_url}${details?.backdrop_path}`}></img>
+                <img alt={details?.id} src={details?.backdrop_path ? `${img_base_url}${details?.backdrop_path}` : ''}></img>
             </div>
             <div className="details-content">
                 <div className="dc-upper">
-                    <img alt={details?.id} src={`${img_base_url}${details?.poster_path}`}></img>
+                    <img alt={details?.id} src={details?.poster_path ? `${img_base_url}${details?.poster_path}` : ''}></img>
                     <div id="d-title">
                         <h1>{details?.title}</h1>
                         <p><span className="material-symbols-outlined">star</span>{details?.vote_average}</p>
@@ -74,7 +74,7 @@ const Details = () =>{
                             {castToRender.filter(result => result?.profile_path!==null).map(cast=>{
                               return(
                                   <div key={cast?.cast_id} className="cast-info">
-                                      <img alt={cast?.name} id='cast-profile' src={`${img_base_url}${cast?.profile_path}`}></img>
+                                      <img alt={cast?.name} id='cast-profile' src={cast?.profile_path ? `${img_base_url}${cast?.profile_path}` : ''}></img>
                                       <p id="name">{cast?.name}</p>
                                       <p id="character">{cast?.character}</p>
                                   </div>
